@@ -1,0 +1,31 @@
+
+    <form [formGroup]="angForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label class="col-md-4"><b>User Name :</b> </label>
+        <input type="text" class="form-control" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+          <div *ngIf="f.name.errors.required">User Name is required</div>
+        </div>
+      </div>
+   
+      <div class="form-group">
+        <label class="col-md-4"><b>Email :</b> </label>
+        <input type="email" class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">email is required</div>
+          <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4"><b>Password :</b> </label>
+        <input type="password" formControlName="pwd" class="form-control" minlength="6" [ngClass]="{ 'is-invalid': submitted && f.pwd.errors }" />
+        <div *ngIf="submitted && f.pwd.errors" class="invalid-feedback">
+            <div *ngIf="f.pwd.errors.required">Password is required</div>
+            <div *ngIf="f.pwd.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+    </div>
+        <div class="form-group">
+          <button (click)="loginValidate()" class="btn btn-primary">Login</button>
+        </div>
+    </form>
+
