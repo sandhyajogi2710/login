@@ -26,7 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 This project is just a login page that is not calling any back-end service, this project can be
 improved in the near future.
-ngrx can be used to manage router and update the movement of the application.
+ngrx can be used to manage router and update the movement of the application
 
 
 ## Adding Bootstrap 4
